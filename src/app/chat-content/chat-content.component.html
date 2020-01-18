@@ -1,0 +1,17 @@
+<div class="chat-display">
+  <div *ngIf="chats[currentChatId]">
+    <div class="card" [class.mine]="chat.mine" [class.not-mine]="!chat.mine" *ngFor="let chat of chats[currentChatId]">
+      <div class="card-body">
+        {{ chat.message }}
+      </div>
+    </div>
+  </div>
+</div>
+<form (ngSubmit)="onSubmit()">
+  <div class="input-group input-group-lg">
+    <input type="text" [(ngModel)]="currentMessage" name="current-message" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-lg" (click)="onSubmit()">Send</span>
+    </div>
+  </div>
+</form>

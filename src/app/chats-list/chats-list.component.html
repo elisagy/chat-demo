@@ -1,0 +1,6 @@
+<ul class="list-group">
+  <li class="list-group-item" [class.active]="currentChatId === chat.id" *ngFor="let chat of chats" (click)="onChatSelected(chat)" style="cursor: pointer;">
+  	<h6>{{ chat.name }}</h6>
+  	<small>{{ chat.lastMessage }}</small>
+  </li>
+</ul>
